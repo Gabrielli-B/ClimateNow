@@ -1,34 +1,46 @@
 import express from "express";
 import cors from "cors";
+import { createServer } from "http";
+
+import { setupWeatherSocket } from "./websocket/weatherSocket";
+
 import { getWeather } from "./services/weatherService";
+import { getCityCoordinates } from "./services/geocodingService";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-/* ROTA TESTE */
+/* TESTE */
 app.get("/", (req, res) => {
-  res.send("API ClimateNow funcionando!");
+  res.send("ClimateNow API funcionando!");
 });
 
-/* ROTA DO CLIMA */
+/* WEATHER */
 app.get("/weather", async (req, res) => {
   try {
-    const { lat, lon } = req.query;
+    const city = req.query.city as string;
 
-    if (!lat || !lon) {
+    if (!city) {
       return res.status(400).json({
-        error: "lat e lon são obrigatórios",
+        error: "Cidade obrigatória",
       });
     }
 
-    const data = await getWeather(String(lat), String(lon));
+    const coordinates = await getCityCoordinates(city);
+
+    const weatherData = await getWeather(
+      String(coordinates.latitude),
+      String(coordinates.longitude)
+    );
 
     res.json({
-      temperature: data.current_weather.temperature,
-      windspeed: data.current_weather.windspeed,
-      time: data.current_weather.time,
+      city: coordinates.name,
+      country: coordinates.country,
+      temperature: weatherData.current_weather.temperature,
+      windspeed: weatherData.current_weather.windspeed,
+      time: weatherData.current_weather.time,
     });
   } catch (error) {
     res.status(500).json({
@@ -37,8 +49,13 @@ app.get("/weather", async (req, res) => {
   }
 });
 
+const server = createServer(app);
+
+/* inicia websocket */
+setupWeatherSocket(server);
+
 const PORT = 3001;
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
