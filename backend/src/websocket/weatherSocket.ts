@@ -10,37 +10,65 @@ export function setupWeatherSocket(server: Server) {
   wss.on("connection", (ws) => {
     console.log("Cliente conectado");
 
-    const sendWeather = async () => {
+    let interval: NodeJS.Timeout;
+
+    ws.on("message", async (message) => {
       try {
-        const coordinates = await getCityCoordinates("Porto Alegre");
+        // recebe a cidade enviada pelo frontend
+        const parsedMessage = JSON.parse(message.toString());
 
-        const weatherData = await getWeather(
-          String(coordinates.latitude),
-          String(coordinates.longitude)
-        );
+        const city = parsedMessage.city;
 
-        ws.send(
-          JSON.stringify({
-            city: coordinates.name,
-            temperature: weatherData.current_weather.temperature,
-            windspeed: weatherData.current_weather.windspeed,
-            time: weatherData.current_weather.time,
-          })
-        );
+        console.log("Cidade recebida:", city);
+
+        // limpa atualização anterior
+        if (interval) {
+          clearInterval(interval);
+        }
+
+        const sendWeather = async () => {
+          try {
+            const coordinates = await getCityCoordinates(city);
+
+            const weatherData = await getWeather(
+              String(coordinates.latitude),
+              String(coordinates.longitude)
+            );
+
+            ws.send(
+              JSON.stringify({
+                city: coordinates.name,
+                country: coordinates.country,
+                temperature: weatherData.current_weather.temperature,
+                windspeed: weatherData.current_weather.windspeed,
+                time: weatherData.current_weather.time,
+              })
+            );
+          } catch (error) {
+            ws.send(
+              JSON.stringify({
+                error: "Erro ao buscar clima",
+              })
+            );
+          }
+        };
+
+        // envia imediatamente
+        sendWeather();
+
+        // atualiza a cada 5 segundos
+        interval = setInterval(sendWeather, 5000);
       } catch (error) {
-        console.log("Erro no websocket");
+        console.log("Erro websocket");
       }
-    };
-
-    // envia imediatamente
-    sendWeather();
-
-    // atualiza a cada 5 segundos
-    const interval = setInterval(sendWeather, 5000);
+    });
 
     ws.on("close", () => {
       console.log("Cliente desconectado");
-      clearInterval(interval);
+
+      if (interval) {
+        clearInterval(interval);
+      }
     });
   });
 }
