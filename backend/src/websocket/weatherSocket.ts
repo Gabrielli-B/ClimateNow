@@ -14,7 +14,6 @@ export function setupWeatherSocket(server: Server) {
 
     ws.on("message", async (message) => {
       try {
-        // recebe a cidade enviada pelo frontend
         const parsedMessage = JSON.parse(message.toString());
 
         const city = parsedMessage.city;
@@ -53,10 +52,8 @@ export function setupWeatherSocket(server: Server) {
           }
         };
 
-        // envia imediatamente
         sendWeather();
 
-        // atualiza a cada 5 segundos
         interval = setInterval(sendWeather, 5000);
       } catch (error) {
         console.log("Erro websocket");
