@@ -1,6 +1,10 @@
 import{Navbar} from "../components/Navbar";
 import {Hero} from "../components/Hero";
 import {FeatureCard} from "../components/FeatureCard";
+import iconWeather from "../assets/icon_weather.avif";
+import iconLeaf from "../assets/icon_leaf.avif";
+import iconCity from "../assets/icon_city.png";
+
 
 export function Home(){
     return(
@@ -10,16 +14,22 @@ export function Home(){
             <Hero/>
 
             <section className="features">
-                <FeatureCard
-                    icon="🌤"
+                <FeatureCard 
+                    icon={iconWeather}
                     title="Clima em tempo real"
                     description="Dados atualizados das principais cidades."
                 />  
 
                 <FeatureCard
-                    icon="🌱"
+                    icon={iconLeaf}
                     title="Consciência ambiental"
                     description="Informação para decisões conscientes."
+                />
+
+                <FeatureCard
+                    icon ={iconCity}
+                    title="Escolha sua cidade"
+                    description="Acompanhe a previsão do tempo de forma simples." 
                 />
                               
             </section>
