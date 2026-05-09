@@ -1,0 +1,44 @@
+.navbar {
+  background: white;
+  border-radius: 20px;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+}
+
+.titleColor{
+  color: #2563eb;
+}
+
+.div,img{
+    width: 45px;
+    height: 40px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.btn-login {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+}
