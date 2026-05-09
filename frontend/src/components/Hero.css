@@ -1,0 +1,36 @@
+.hero {
+  background-image: url("../assets/icon_background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 60vh;
+  border-radius: 20px;
+  padding: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-text h2 {
+  font-size: 54px;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.hero-text span {
+  color: #facc15;
+}
+
+.hero-text p {
+  color: #475569;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+

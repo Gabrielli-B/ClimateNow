@@ -1,9 +1,12 @@
+import "./Hero.css";
 
 
 export function Hero(){
     return(
         <section className="hero">
+            
             <div className="hero-text">
+
                 <h2>
                     Informação que transforma o{" "}
                     <span>amanhã.</span>
@@ -16,9 +19,6 @@ export function Hero(){
 
             </div>
 
-            <div className="hero-image">
-                ☀️☁️🌎
-            </div>
 
         </section>
     );

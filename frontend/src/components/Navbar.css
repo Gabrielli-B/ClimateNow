@@ -17,7 +17,7 @@
   color: #2563eb;
 }
 
-.div,img{
+.div img{
     width: 45px;
     height: 40px;
 }
@@ -41,4 +41,8 @@ nav a {
   padding: 12px 24px;
   border-radius: 10px;
   cursor: pointer;
+}
+.btn-login:hover{
+    background-color: rgb(11, 11, 124);
+    transition: backgroud-color 0.3s;
 }
