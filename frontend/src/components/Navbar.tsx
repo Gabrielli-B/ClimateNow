@@ -16,6 +16,7 @@ export function Navbar(){
                 <a href="#">Recursos</a>
                 <a href="#">Contato</a>
                 <button className="btn-login">Entrar</button>
+                <button className="btn-signUp">Cadastrar-se</button>
             </nav>
         </header>
     );

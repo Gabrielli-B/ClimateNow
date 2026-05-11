@@ -17,7 +17,7 @@
   color: #2563eb;
 }
 
-.div img{
+.title img{
     width: 45px;
     height: 40px;
 }
@@ -34,15 +34,30 @@ nav a {
   font-weight: 600;
 }
 
+.btn-signUp{
+  background-color:white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  border-color: #facc15;
+  color: #facc15;
+}
+
+.btn-signUp:hover{
+  background-color:  #facc15;
+   color: white;
+}
+
 .btn-login {
-  background: #2563eb;
-  color: white;
-  border: none;
+  background: white;
+  color: #2563eb;
+  border-color: #2563eb;
   padding: 12px 24px;
   border-radius: 10px;
   cursor: pointer;
 }
 .btn-login:hover{
-    background-color: rgb(11, 11, 124);
+    background-color:#2563eb;
+    color: white;
     transition: backgroud-color 0.3s;
 }

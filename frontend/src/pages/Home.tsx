@@ -4,14 +4,17 @@ import {FeatureCard} from "../components/FeatureCard";
 import iconWeather from "../assets/icon_weather.avif";
 import iconLeaf from "../assets/icon_leaf.avif";
 import iconCity from "../assets/icon_city.png";
-
+import "./Home.css";
 
 export function Home(){
     return(
         <div className="container">
-            <Navbar/>
 
-            <Hero/>
+            <section className="hero-section">
+                <Navbar/>
+                <Hero/>    
+            </section>
+            
 
             <section className="features">
                 <FeatureCard 
