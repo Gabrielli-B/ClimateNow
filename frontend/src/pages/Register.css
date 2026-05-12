@@ -23,6 +23,7 @@ body{
 .register-card{
     width: 100%;
     max-width: 1400px;
+    min-height: 730px;
 
     background-image: url("../assets/icon_backgroudRegister.png");
     background-repeat: no-repeat;
@@ -31,8 +32,8 @@ body{
     background-position: 20% center;
 
     border-radius: 30px;
-    padding: 40px;
-
+    padding: 30px;
+    padding-top: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
@@ -45,21 +46,24 @@ body{
 }
 
 
-
-
-
-
-.titleColor{
-    color: #2563eb;
+.logo-text{
+     display: flex;
+     align-items: center;
 }
 
-header{
+.logo-text img{
+    padding-right: 5px;
+    border-radius: 40px;
+}
+
+.register-card header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+   
 }
 
-nav{
+.register-card nav{
     display: flex;
     align-items: center;
     gap: 30px;
@@ -75,8 +79,7 @@ nav button{
     border: none;
     background: #f7c62f;
 
-    padding: 14px 28px;
-
+    
     border-radius: 12px;
 
     font-weight: bold;
