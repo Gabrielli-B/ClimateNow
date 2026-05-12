@@ -13,7 +13,7 @@ export function Register() {
 
         <img src={iconClimateNow} alt="Logo ClimateNow" />
         <h1>Climate</h1>
-        <h1>Now</h1>
+        <h1 className="titleColor">Now</h1>
 
         <nav>
             <a href="#">Sobre</a>
