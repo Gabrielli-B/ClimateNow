@@ -39,9 +39,7 @@ nav a {
   padding: 12px 24px;
   border-radius: 10px;
   cursor: pointer;
-
   border: 2px solid #facc15;
-
   color: #facc15;
 }
 
@@ -53,13 +51,12 @@ nav a {
 .btn-login {
   background: white;
   color: #2563eb;
-
   border: 2px solid #2563eb;
-
   padding: 12px 24px;
   border-radius: 10px;
   cursor: pointer;
 }
+
 .btn-login:hover{
     background-color:#2563eb;
     color: white;
