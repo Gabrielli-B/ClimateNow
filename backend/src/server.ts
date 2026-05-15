@@ -12,12 +12,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-/* TESTE */
 app.get("/", (req, res) => {
   res.send("ClimateNow API funcionando!");
 });
 
-/* WEATHER */
 app.get("/weather", async (req, res) => {
   try {
     const city = req.query.city as string;
@@ -51,7 +49,6 @@ app.get("/weather", async (req, res) => {
 
 const server = createServer(app);
 
-/* inicia websocket */
 setupWeatherSocket(server);
 
 const PORT = 3001;
