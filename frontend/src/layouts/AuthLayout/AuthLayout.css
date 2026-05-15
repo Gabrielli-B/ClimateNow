@@ -1,0 +1,58 @@
+.container-register{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.register-card{
+    width: 100%;
+    max-width: 1400px;
+    min-height: 730px;
+    background-image: url("../../assets/icon_backgroudRegister.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% center;
+    border-radius: 30px;
+    padding: 30px;
+    padding-top: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.content-register{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.left-side{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.right-side{
+    width: 450px;
+}
+
+.left-side h2{
+    font-size: 4rem;
+    color: #0a1445;
+    margin-top: 80px;
+    line-height: 1.1;
+}
+
+.left-side span{
+    color: #f7c62f;
+}
+
+.left-side p{
+    font-size: 1.2rem;
+    color: #4b5563;
+    max-width: 500px;
+    line-height: 1.6;
+     
+}

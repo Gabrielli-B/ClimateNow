@@ -1,5 +1,5 @@
 import"./Navbar.css";
-import iconClimateNow from "../assets/icon_climateNow.png";
+import iconClimateNow from "../../assets/icon_climateNow.png";
 import { Link } from "react-router-dom";
 
 export function Navbar(){
@@ -17,12 +17,12 @@ export function Navbar(){
                 <a href="#">Recursos</a>
                 <a href="#">Contato</a>
 
-                <Link to="/login">
-                    <button className="btn-login">Entrar</button>
+                <Link to="/login" className="btn-login">
+                    Entrar
                 </Link>
 
-                 <Link to="/register">
-                    <button className="btn-signUp">Cadastrar-se</button>     
+                 <Link to="/register" className="btn-signUp">
+                    Cadastrar-se     
                  </Link>
         
             </nav>
