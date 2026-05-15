@@ -40,6 +40,7 @@ export function setupWeatherSocket(server: Server) {
                 country: coordinates.country,
                 temperature: weatherData.current_weather.temperature,
                 windspeed: weatherData.current_weather.windspeed,
+                weathercode: weatherData.current_weather.weathercode,
                 time: weatherData.current_weather.time,
               })
             );

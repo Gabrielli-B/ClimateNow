@@ -1,14 +1,32 @@
 import { useEffect, useState } from "react";
+import { WiDaySunny,WiCloud,WiRain,WiSnow,WiThunderstorm,} from "react-icons/wi";
 
 type WeatherData = {
   city: string;
   country: string;
   temperature: number;
   windspeed: number;
+  weathercode: number;
   time: string;
 };
 
 export function Dashboard() {
+
+   function getWeatherIcon(code: number) {
+        if (code === 0) {
+            return <WiDaySunny />;
+        }
+        if (code <= 3) {
+            return <WiCloud />;
+        }
+        if (code <= 67) {
+            return <WiRain />;
+        }
+        if (code <= 77) {
+            return <WiSnow />;
+        }
+        return <WiThunderstorm />;
+    }
   const [city, setCity] = useState("Porto Alegre");
 
   const [weather, setWeather] =
@@ -57,6 +75,9 @@ export function Dashboard() {
 
       {weather && (
         <div>
+          <div className="weather-icon">
+            {getWeatherIcon(weather.weathercode)}
+          </div>
           <h2>
             {weather.city} - {weather.country}
           </h2>
