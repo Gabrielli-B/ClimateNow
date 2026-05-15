@@ -1,5 +1,5 @@
 import { AuthLayout } from "../../layouts/AuthLayout/AuthLayout";
-import "./Register.css";
+import "./Register.css"
 
 export function Register() {
   return (
@@ -12,8 +12,8 @@ export function Register() {
         <input type="text" placeholder="Nome" />
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Senha" />
-        <button type="submit">Cadastrar</button>
-        
+        <button className="btn-singUp" type="submit">Cadastrar</button>
+
       </form>
     </AuthLayout>
   );

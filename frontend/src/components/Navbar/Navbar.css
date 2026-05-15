@@ -22,6 +22,8 @@
     height: 40px;
 }
 
+
+
 nav {
   display: flex;
   align-items: center;
@@ -62,6 +64,6 @@ nav a {
     color: white;
     transition: backgroud-color 0.3s;
 }
-.btn-login .btn-signUp{
+.btn-login, .btn-signUp{
   text-decoration: none;
 }

@@ -1,5 +1,6 @@
 import { Navbar } from "../../components/Navbar/Navbar";
 import "./AuthLayout.css";
+import "../../pages/forms.css";
 
 type AuthLayoutProps = {
   children: React.ReactNode;
@@ -32,13 +33,10 @@ export function AuthLayout({ children }: AuthLayoutProps){
           </div>
 
           <div className="right-side">
-
             {children}
-
           </div>
 
         </div>
-
       </section>
 
     </div>

@@ -15,8 +15,8 @@ body {
 
 .features {
   display: flex;
- 
-  
+  gap: 10px;
+  margin-top: 20px;
   overflow: hidden;
-  background: white;
+  
 }
