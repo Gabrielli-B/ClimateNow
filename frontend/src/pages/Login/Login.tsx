@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
 import iconClimateNow from "../assets/icon_climateNow.png";
 import "./Login.css"
@@ -61,7 +61,7 @@ export function Login() {
 
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Senha" />
-            <button onClick={handleLogin}>Entrar</button>
+            <button className="btn-login" onClick={handleLogin}>Entrar</button>
           </form>
         </div>
       </div>

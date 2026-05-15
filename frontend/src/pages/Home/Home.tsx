@@ -1,6 +1,6 @@
-import{Navbar} from "../components/Navbar";
-import {Hero} from "../components/Hero";
-import {FeatureCard} from "../components/FeatureCard";
+import{Navbar} from "../../components/Navbar/Navbar";
+import {Hero} from "../../components/Hero/Hero";
+import {FeatureCard} from "../../components/FeatureCard/FeatureCard";
 import iconWeather from "../assets/icon_weather.avif";
 import iconLeaf from "../assets/icon_leaf.avif";
 import iconCity from "../assets/icon_city.png";

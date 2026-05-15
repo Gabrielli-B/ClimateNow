@@ -1,0 +1,8 @@
+.right-side .btn-login{
+    background-color: #2563eb;
+    color: black;
+}
+
+.right-side .btn-login:hover{
+    background-color: #164cc0;
+}
