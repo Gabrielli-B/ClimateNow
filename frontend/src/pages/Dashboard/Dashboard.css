@@ -1,0 +1,133 @@
+.container-dashboard{
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px;
+
+}
+
+.header-dashboard{
+  background: white;
+  border-radius: 20px;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.content-dashboard{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+}
+
+.nav-dashboard{
+    background: white;
+    border-radius: 20px;
+    min-height: 450px;
+    padding: 20px;
+}
+
+.main-dashboard{
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-dashboard .d-p{
+  color: #475569;
+  font-size: 15px;
+  
+}
+
+.search-city{
+    display: flex;
+    gap: 10px;
+}
+
+.search-city input{
+    width: 50%;
+     border-radius: 10px;
+    border: 1px solid #cbd5e1
+}
+
+.search-city button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #2563eb;
+}
+
+.search-city button:hover{
+    background-color: #164cc0;
+}
+
+.weather-card{
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.weather-left{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.weather-icon{
+    font-size: 120px;
+    color: #facc15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-icon img{
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    margin-right: -50px;
+}
+
+.weather-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.weather-info h2{
+    font-size: 32px;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.weather-info h2 span{
+    color: #64748b;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.weather-info h1{
+    font-size: 72px;
+    color: #0f172a;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.weather-info p{
+    color: #475569;
+    font-size: 18px;
+}
+
+.weather-card > p{
+    color: #94a3b8;
+    font-size: 14px;
+}
